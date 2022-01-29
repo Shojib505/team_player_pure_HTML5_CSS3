@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-color: #121212;
+    font-family: 'Raleway',sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner{
+    display: flex;
+    height: 100vh;
+}
+/* left side header */
+.banner-left{
+    flex: 1;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.banner-title{
+    font-size: 60px;
+    white-space: nowrap ;
+    position: relative;
+    color: transparent;
+}
+.banner-title::before{
+    content: 'Team Player';
+    color: tomato;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation: typing 3s linear infinite;
+}
+@keyframes typing{
+    0% {
+        content: 'T|';
+    }
+
+    5% {
+        content: 'Te|';
+    }
+
+    10% {
+        content: 'Tea|';
+    }
+
+    15% {
+        content: 'Team|';
+    }
+
+    20% {
+        content: 'Team |';
+    }
+
+    25% {
+        content: 'Team P|';
+    }
+
+    30% {
+        content: 'Team Pl|';
+    }
+
+    35% {
+        content: 'Team Pla|';
+    }
+
+    40% {
+        content: 'Team Play|';
+    }
+
+    45% {
+        content: 'Team Playe|';
+    }
+
+    50% {
+        content: 'Team Player |';
+    }
+
+
+    61%,
+    76%{
+        content: 'Team Player |';
+    }
+    78%{
+        content: 'Team Player|';
+    }
+    80%{
+        content: 'Team Playe|';
+    }
+    82% {
+        content: 'Team Play|';
+    }
+
+    84% {
+        content: 'Team Pla|';
+    }
+
+    86% {
+        content: 'Team Pl|';
+    }
+
+    88% {
+        content: 'Team P|';
+    }
+
+    90% {
+        content: 'Team |';
+    }
+
+    92% {
+        content: 'Team|';
+    }
+
+    94% {
+        content: 'Tea|';
+    }
+
+    96% {
+        content: 'Te|';
+    }
+
+    98% {
+        content: 'T|';
+    }
+
+    100% {
+        content: '|';
+    }
+
+}
+.banner-text{
+    line-height: 2;
+    margin: 20px 0;
+}
+.love-btn{
+    outline: 0;
+    font-size: 18px;
+    padding: 10px 30px;
+    background-color: tomato;
+    color: white;
+    border: 4px solid tomato;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s linear;
+}
+.love-btn:hover{
+    background-color: transparent;
+    color: tomato;
+}
+/* right side header */
+.banner-right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-right img{
+    border: 4px solid tomato;
+}
+
+/* gallery section */
+
+.section_title{
+    text-align: center;
+}
+.section_title h1{
+    color: tomato;
+    font-size: 40px;
+    margin: 50px 0px;
+    border-left: 3px solid tomato;
+    border-right: 3px solid tomato;
+    display: inline-block;
+    padding: 0px 10px;
+    line-height: 0.9;
+}
+
+.gallery{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}   
+.photo{
+    width: 280px;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+.photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.border{
+    background-color: #fff;
+    position: absolute;
+    transition: .7s ease-in-out;
+}
+/* border bar left right top bottom 
+height width */
+.border.top, .border.bottom{
+    height: 4px;
+    width: 275px;
+}
+.border.left, .border.right{
+    height: 275px;
+    width: 4px;
+}
+/* setting border bar left right top bottom 
+outside the box for animaton pourpose  */
+.border.top{
+    top:0px;
+    right: 100%;
+}
+.border.bottom{
+    bottom: 0px;
+    left: 100%;
+}
+.border.left{
+    left: 0px;
+    top: 100%;
+}
+.border.right{
+    right: 0px;
+    bottom: 100%;
+}
+/* now setting hover when hover border bar
+came inside photo frem. top bar come right by 5px by 5x
+bottom bar come left by 5px by 5px  SO ON SO..... */
+.photo:hover .border.top{
+    right: 5px;
+}
+.photo:hover .border.bottom{
+    left: 5px;
+}
+.photo:hover .border.left{
+    top: 5px;
+}
+.photo:hover .border.right{
+    bottom: 5px;
+}
+
+/* putting photo-content outside the photo box */
+.photo-content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding-left: 30px;
+    bottom: 0px;
+    left: 0px;
+    transform: translateY(400px);
+    transition: .3s ease-out;
+}
+/* bringing photo-content inside the photo box */
+.photo:hover .photo-content{
+    transform: translateY(200px);
+}
+
+/* semi dark the picture when photo-content appier */
+.photo::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: 2s linear;
+}
+.photo:hover::before{
+    opacity: 1;
+}
+
